@@ -15,6 +15,11 @@
     "name": "Blake Netzeband",
     "email": "blake.netzeband@kinandcarta.com"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blake-kc/module-fed-versioning.git"
+  },
+  "homepage": "https://github.com/blake-kc/module-fed-versioning",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.20.12",
