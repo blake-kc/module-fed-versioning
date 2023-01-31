@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { ChakraProvider, Heading } from "@chakra-ui/react";
 
-import Slider from "jherr-mf-slider/slider";
+import Slider from "bn-mf-slider/slider";
 
 import "./index.css";
 

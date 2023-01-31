@@ -4,9 +4,9 @@
   "scripts": {
     "build": "webpack --mode production",
     "build:dev": "webpack --mode development",
-    "build:start": "cd dist && PORT=8080 npx serve",
-    "start": "webpack serve",
-    "start:live": "webpack-dev-server --open --mode development --liveReload"
+    "serve": "cd dist && PORT=8080 npx serve",
+    "start": "webpack serve --mode development",
+    "start:live": "webpack-dev-server --open --mode development --live-reload"
   },
   "license": "MIT",
   "author": {

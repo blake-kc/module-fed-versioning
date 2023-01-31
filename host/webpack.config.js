@@ -2,15 +2,23 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const { camelCase } = require("camel-case");
 
+// added caret here for all minor releases
 const federatedRemotes = {
-  "bn-mf-slider": "1.0.0",
+  "bn-mf-slider": "^1.0.0",
 };
+
 // add federated remotes to dependencies
 const deps = {
   ...federatedRemotes,
   ...require("./package.json").dependencies,
 };
 
+/**
+ * generate unpkg remote address
+ *
+ * @param {string} name library name
+ * @returns {string} unpkg address
+ */
 const unpkgRemote = (name) =>
   `${camelCase(name)}@https://unpkg.com/${name}@${
     deps[name]
@@ -23,6 +31,8 @@ const remotes = Object.keys(federatedRemotes).reduce(
   }),
   {}
 );
+
+console.log("remotes", remotes);
 
 module.exports = {
   output: {
