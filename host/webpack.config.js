@@ -3,8 +3,9 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 const { camelCase } = require("camel-case");
 
 const federatedRemotes = {
-  "jherr-mf-slider": "1.0.0",
+  "bn-mf-slider": "1.0.0",
 };
+// add federated remotes to dependencies
 const deps = {
   ...federatedRemotes,
   ...require("./package.json").dependencies,
@@ -14,6 +15,7 @@ const unpkgRemote = (name) =>
   `${camelCase(name)}@https://unpkg.com/${name}@${
     deps[name]
   }/dist/browser/remote-entry.js`;
+
 const remotes = Object.keys(federatedRemotes).reduce(
   (remotes, lib) => ({
     ...remotes,

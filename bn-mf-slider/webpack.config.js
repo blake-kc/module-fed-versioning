@@ -3,16 +3,17 @@ const { camelCase } = require("camel-case");
 const webpack = require("webpack");
 const { merge } = require("webpack-merge");
 
+// extract dependencies and name from package.json
 const pkg = require("./package.json");
-
 const name = camelCase(pkg.name);
+const deps = pkg.dependencies;
 
 // The modules you want to expose
 const exposes = {
   "./slider": "./src/slider.jsx",
 };
 
-const deps = require("./package.json").dependencies;
+// shared dependencies
 const shared = {
   ...deps,
   react: {

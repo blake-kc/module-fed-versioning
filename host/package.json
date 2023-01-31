@@ -6,9 +6,7 @@
     "build:dev": "webpack --mode development",
     "build:start": "cd dist && PORT=8080 npx serve",
     "start": "webpack serve",
-    "start:live": "webpack-dev-server --open --mode development --liveReload",
-    "docker:build": "docker build . -t wp5-starter",
-    "docker:run": "docker run -p 8080:8080 wp5-starter"
+    "start:live": "webpack-dev-server --open --mode development --liveReload"
   },
   "license": "MIT",
   "author": {
@@ -16,27 +14,27 @@
     "email": "blake.netzeband@kinandcarta.com"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.13",
-    "@babel/plugin-transform-runtime": "^7.12.15",
-    "@babel/preset-env": "^7.12.13",
-    "@babel/preset-react": "^7.12.13",
-    "babel-loader": "^8.2.2",
+    "@babel/core": "^7.20.12",
+    "@babel/plugin-transform-runtime": "^7.19.6",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "babel-loader": "^9.1.2",
     "camel-case": "^4.1.2",
-    "css-loader": "^5.0.2",
-    "html-webpack-plugin": "^5.1.0",
+    "css-loader": "^6.7.3",
+    "html-webpack-plugin": "^5.5.0",
     "json-loader": "^0.5.7",
-    "style-loader": "^2.0.0",
-    "webpack": "^5.14.0",
-    "webpack-cli": "^4.3.1",
-    "webpack-dev-server": "3.11.0"
+    "style-loader": "^3.3.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "4.11.1"
   },
   "dependencies": {
-    "@babel/runtime": "^7.12.0",
-    "@chakra-ui/react": "^1.3.2",
-    "@emotion/react": "^11.1.5",
-    "@emotion/styled": "^11.1.5",
-    "framer-motion": "^3.3.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "@babel/runtime": "^7.20.13",
+    "@chakra-ui/react": "^2.4.9",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "framer-motion": "^8.5.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
