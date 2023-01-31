@@ -1,5 +1,5 @@
 {
-  "name": "jherr-mf-slider",
+  "name": "bn-mf-slider",
   "version": "1.0.1",
   "description": "",
   "main": "dist/node/remote-entry.js",
@@ -11,7 +11,10 @@
     "build": "webpack"
   },
   "keywords": [],
-  "author": "",
+  "author": {
+    "name": "Blake Netzeband",
+    "email": "blake.netzeband@kinandcarta.com"
+  },
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.12.13",

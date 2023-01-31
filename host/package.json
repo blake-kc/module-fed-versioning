@@ -1,5 +1,5 @@
 {
-  "name": "react-unpkg-mf-consumer-starter",
+  "name": "host",
   "version": "1.0.0",
   "scripts": {
     "build": "webpack --mode production",
@@ -12,8 +12,8 @@
   },
   "license": "MIT",
   "author": {
-    "name": "Jack Herrington",
-    "email": "jherr@pobox.com"
+    "name": "Blake Netzeband",
+    "email": "blake.netzeband@kinandcarta.com"
   },
   "devDependencies": {
     "@babel/core": "^7.12.13",
