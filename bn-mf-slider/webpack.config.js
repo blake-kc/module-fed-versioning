@@ -4,6 +4,7 @@ const webpack = require("webpack");
 const { merge } = require("webpack-merge");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const EnvironmentPlugin = require("webpack/lib/EnvironmentPlugin");
 
 // extract dependencies and name from package.json
 const pkg = require("./package.json");
@@ -39,6 +40,10 @@ const devConfig = {
   plugins: [
     new HtmlWebPackPlugin({
       template: "./src/index.html",
+    }),
+    new EnvironmentPlugin({
+      NODE_ENV: "development",
+      DEBUG: false,
     }),
   ],
 };
