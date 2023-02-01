@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { ChakraProvider, Heading } from "@chakra-ui/react";
 
 import Slider from "./slider";
 

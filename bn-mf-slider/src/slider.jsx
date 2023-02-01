@@ -6,11 +6,11 @@ export default () => (
     templateColumns="1fr 10fr 1fr"
     p={5}
     style={{
-      border: "5px dashed red",
+      border: "5px dashed magenta",
     }}
   >
     <Button>Left</Button>
-    <div>Slider (1.0.1)</div>
+    <div>Slider (1.0.3)</div>
     <Button>Right</Button>
   </Grid>
 );

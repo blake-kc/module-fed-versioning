@@ -1,6 +1,6 @@
 {
   "name": "bn-mf-slider",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "dist/node/remote-entry.js",
   "browser": "dist/browser/remote-entry.js",
