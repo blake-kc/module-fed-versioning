@@ -32,7 +32,7 @@ const remotes = Object.keys(federatedRemotes).reduce(
   {}
 );
 
-console.log("remotes", remotes);
+console.log("using remotes: ", remotes);
 
 module.exports = {
   output: {
@@ -45,6 +45,7 @@ module.exports = {
 
   devServer: {
     port: 8080,
+    historyApiFallback: true,
   },
 
   module: {

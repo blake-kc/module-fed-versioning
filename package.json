@@ -1,0 +1,23 @@
+{
+  "name": "module-fed-versioning",
+  "version": "1.0.0",
+  "description": "POC for versioning module federation containers",
+  "repository": "git@github.com:blake-kc/module-fed-versioning.git",
+  "author": "Blake Netzeband <blake.netzeband@kinandcarta.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "bn-mf-slider",
+    "host"
+  ],
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "wsrun": "^5.2.4"
+  },
+  "scripts": {
+    "start": "concurrently \"wsrun --parallel start --open --mode development --live-reload\"",
+    "build": "concurrently \"wsrun --parallel build --mode production\"",
+    "build:dev": "concurrently \"wsrun --parallel build --mode development\"",
+    "serve": "concurrently \"wsrun --parallel serve\""
+  }
+}

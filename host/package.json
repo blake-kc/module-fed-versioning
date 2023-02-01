@@ -2,11 +2,9 @@
   "name": "host",
   "version": "1.0.0",
   "scripts": {
-    "build": "webpack --mode production",
-    "build:dev": "webpack --mode development",
-    "serve": "cd dist && PORT=8080 npx serve",
-    "start": "webpack serve --mode development",
-    "start:live": "webpack-dev-server --open --mode development --live-reload"
+    "start": "webpack serve",
+    "build": "webpack",
+    "serve": "cd dist && PORT=8080 npx serve"
   },
   "license": "MIT",
   "author": {

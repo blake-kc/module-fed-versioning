@@ -8,7 +8,9 @@
     "dist"
   ],
   "scripts": {
-    "build": "webpack"
+    "start": "webpack serve",
+    "build": "webpack",
+    "serve": "cd dist && PORT=8081 npx serve"
   },
   "keywords": [],
   "author": {

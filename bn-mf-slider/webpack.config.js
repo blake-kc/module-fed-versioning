@@ -2,6 +2,8 @@ const path = require("path");
 const { camelCase } = require("camel-case");
 const webpack = require("webpack");
 const { merge } = require("webpack-merge");
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 
 // extract dependencies and name from package.json
 const pkg = require("./package.json");
@@ -20,6 +22,25 @@ const shared = {
     singleton: true,
     requiredVersion: deps.react,
   },
+};
+
+/** @type {webpack.Configuration} */
+const devConfig = {
+  mode: "development",
+  output: {
+    publicPath: "http://localhost:8081/",
+  },
+
+  devServer: {
+    port: 8081,
+    historyApiFallback: true,
+  },
+
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: "./src/index.html",
+    }),
+  ],
 };
 
 /** @type {webpack.Configuration} */
@@ -63,7 +84,7 @@ const browserConfig = {
     path: path.resolve("./dist/browser"),
   },
   plugins: [
-    new webpack.container.ModuleFederationPlugin({
+    new ModuleFederationPlugin({
       name,
       filename: "remote-entry.js",
       exposes,
@@ -79,7 +100,7 @@ const nodeConfig = {
     path: path.resolve("./dist/node"),
   },
   plugins: [
-    new webpack.container.ModuleFederationPlugin({
+    new ModuleFederationPlugin({
       name,
       filename: "remote-entry.js",
       library: { type: "commonjs" },
@@ -89,7 +110,10 @@ const nodeConfig = {
   ],
 };
 
-module.exports = [
-  merge(baseConfig, browserConfig),
-  merge(baseConfig, nodeConfig),
-];
+module.exports = (env, argv) => {
+  if (argv.mode === "development") {
+    return merge(baseConfig, devConfig);
+  }
+
+  return [merge(baseConfig, browserConfig), merge(baseConfig, nodeConfig)];
+};
